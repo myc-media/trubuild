@@ -6,7 +6,7 @@ body .container-wrap .aboutJT, body .container-wrap .alternateRowColor {
 body .container-wrap .aboutJT:hover, body .container-wrap .alternateRowColor:hover, body.portfolio-template-default.single-portfolio .container-wrap .portfolioElements:hover {
   box-shadow: 0px 0px 50px -17px black; }
 
-body .container-wrap .aboutJT:hover, body .container-wrap .alternateRowColor:hover, body.portfolio-template-default.single-portfolio .container-wrap .portfolioElements:hover, body .container-wrap .aboutCTA, body .container-wrap .aboutCTA .nectar-cta, body .container-wrap .aboutCTA:hover .nectar-cta, body .container-wrap .aboutCTA:hover .nectar-cta a, body .container-wrap .aboutCTA:hover .nectar-cta .link_wrap a.link_text, body .container-wrap .aboutJT, body .container-wrap .alternateRowColor, body.single-portfolio .container.main-content .page-submenu li a, body.single-portfolio .container.main-content .page-submenu li.current-menu-item a {
+body .container-wrap .aboutJT:hover, body .container-wrap .alternateRowColor:hover, body.portfolio-template-default.single-portfolio .container-wrap .portfolioElements:hover, body .container-wrap .testimonial_slider .flickity-slider blockquote, body .container-wrap .testimonial_slider .flickity-slider blockquote.is-selected, body .container-wrap .testimonial_slider .flickity-slider blockquote:not(.is-selected) p, body .container-wrap .testimonial_slider .flickity-slider blockquote p, body .container-wrap .aboutCTA, body .container-wrap .aboutCTA .nectar-cta, body .container-wrap .aboutCTA:hover .nectar-cta, body .container-wrap .aboutCTA:hover .nectar-cta a, body .container-wrap .aboutCTA:hover .nectar-cta .link_wrap a.link_text, body .container-wrap .aboutJT, body .container-wrap .alternateRowColor, body.single-portfolio .container.main-content .page-submenu li a, body.single-portfolio .container.main-content .page-submenu li.current-menu-item a {
   transition: all .2s ease-in-out; }
 
 body .container-wrap .aboutJT:hover, body .container-wrap .alternateRowColor:hover, body.portfolio-template-default.single-portfolio .container-wrap .portfolioElements:hover {
@@ -84,16 +84,42 @@ body .container-wrap {
   /***HOLMES APPROVED****/
   /***PORTFOLIO PAGE***/ }
 
-body .container-wrap .testimonial_slider blockquote[aria-selected="false"] p {
+body .container-wrap .testimonial_slider .flickity-slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+
+body .container-wrap .testimonial_slider .flickity-slider blockquote.is-selected {
+  align-self: flex-start; }
+
+body .container-wrap .testimonial_slider .flickity-slider blockquote[aria-selected="false"] p {
   color: #676767 !important; }
 
-body .container-wrap .testimonial_slider blockquote p {
+body .container-wrap .testimonial_slider .flickity-slider blockquote:not(.is-selected) p {
+  background: #ededed; }
+
+body .container-wrap .testimonial_slider .flickity-slider blockquote.is-selected {
+  filter: drop-shadow(0px 6px 5px #777);
+  -webkit-filter: drop-shadow(0px 6px 5px #777);
+  -o-filter: drop-shadow(0px 6px 5px #777);
+  -moz-filter: drop-shadow(0px 6px 5px #777);
+  -ms-filter: drop-shadow(0px 6px 5px #777); }
+
+body .container-wrap .testimonial_slider .flickity-slider blockquote.is-selected p ~ span {
+  color: #676767 !important;
+  font-weight: 100; }
+
+body .container-wrap .testimonial_slider .flickity-slider blockquote.is-selected p ~ span:not(.title) {
+  font-weight: bold; }
+
+body .container-wrap .testimonial_slider .flickity-slider blockquote p {
   box-sizing: border-box;
   padding: 12% !important;
   font-size: 12px;
   line-height: 14px; }
 
-body .container-wrap .testimonial_slider blockquote p:before {
+body .container-wrap .testimonial_slider .flickity-slider blockquote p:before {
   left: 1% !important;
   top: 1% !important; }
 
