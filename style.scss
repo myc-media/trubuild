@@ -1,0 +1,445 @@
+/*****COLORS****/
+$orange : #d35728;
+$lightGray: #ededed;
+$darkGray: #676767;
+$transparentOrange: rgba(211, 87, 40, 0.8);
+$transparentLightOrange: rgba(211, 87, 40, 0.2);
+$white: white;
+$niceGray: #333;
+$footerGray: #3a3a3a;
+$black: black;
+
+/*****EXTENDS*****/
+%boxShadow {
+    box-shadow: 0px 0px 50px -22px $black;
+}
+
+%boxShadowHover {
+    box-shadow: 0px 0px 50px -17px $black;
+}
+
+%transition {
+    transition: all .2s ease-in-out;
+}
+
+%scale {
+    transform: scale(1.01);
+    z-index: 100;
+    @extend %boxShadowHover;
+    @extend %transition;
+}
+
+/******FONTS**********/
+@mixin font-family($family, $weight) {
+    font-family: '#{$family}';
+    src: url('/fonts/#{$family}.eot') format('embedded-opentype'), 
+        
+        url('/fonts/#{$family}.woff2') format('woff2'),
+        url('/fonts/#{$family}.woff') format('woff'),
+        url('/fonts/#{$family}.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: normal;
+}
+@font-face {
+    @include font-family(Gotham-Medium, 500 );
+}
+
+@font-face {
+    @include font-family(Gotham-Book, normal );
+}
+
+@font-face {
+    @include font-family(Gotham-Bold, bold );
+}
+
+@font-face {
+    @include font-family(Gotham-Light, 300 );
+}
+
+@font-face {
+    @include font-family(Gotham-Black, 500 );
+}
+
+/********styles*********/
+
+body {
+    /***fonts***/
+    * {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+    font-family: 'Gotham-Light' !important;
+    a {
+        font-family: 'Gotham-Light' !important;
+    }
+    p {
+        font-family: 'Gotham-Light' !important;
+    }
+    
+    h1 {
+        font-family: 'Gotham-Black' !important;
+    }
+    
+    h2, h3, h4, h5, h6 {
+        font-family: 'Gotham-Bold' !important;
+        color: $orange;
+    }
+    div.wpadminbar {
+      font-family: initial !important;
+    }
+
+    /*****MAIN CONTENT*****/
+    /***REMOVE CONTENT PADDING***/
+    .container-wrap {
+        padding-bottom: 0 !important;
+
+        /****TESTIMONIALS********/
+        .testimonial_slider {
+            blockquote{
+                &[aria-selected="false"] {
+                    p {
+                        color: $darkGray !important;
+                    }
+                }
+                p {
+                    box-sizing: border-box;
+                    padding: 12% !important;
+                    font-size: 12px;
+                    line-height: 14px;
+                    &:before {
+                        left: 1% !important;
+                        top: 1% !important;
+                    }
+                }
+            }
+        }
+
+        /***HOME PORTFOLIO STYLE***/
+        .portfolioRow {
+            .customHomesPortfolio, .renovationsPortfolio {
+                &:hover {
+                    .wpb_content_element {
+                        background: $transparentOrange;
+                        transition: all .2s ease-out;
+                        h3 {
+                            color: $white;
+                        }
+                    }
+                }
+                .wpb_content_element {
+                    background: rgba(0, 0, 0, 0.8);
+                    transition: all .2s ease-out;
+                    h3 {
+                        box-sizing: border-box;
+                        padding: 25%;
+                    }
+                }
+            }
+        }
+
+        /****INSTAGRAM FEED ***/
+        .instagramFeed {
+            .eapps-instagram-feed-title.eapps-instagram-feed-title-visible {
+                color: #d35728;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-family: 'Gotham-Bold';
+            }
+        }
+
+        /****TRUBUILD ADVANTAGE*****/
+        .trubuildAdvantage {
+            h3 {
+                span.orange {
+                    color: $orange;
+                }
+            }
+        }
+        
+        /*****ABOUT****/
+        blockquote {
+            span.orange {
+                color: $orange;
+            }
+        }
+        .aboutCTA {
+            @extend %transition;
+            .nectar-cta {
+                border: 6px solid $orange;
+                box-sizing: border-box;
+                padding: 2%;
+                @extend %transition;
+                .link_wrap {
+                    a.link_text {
+                        &:after, .arrow {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                .nectar-cta {
+                    background-color: $niceGray;
+                    @extend %transition;
+                    &, a {
+                        color: $white;
+                        @extend %transition;
+                    }
+                    .link_wrap {
+                        a.link_text {
+                            background-color: $orange;
+                            padding: 1%;
+                            box-sizing: border-box;
+                            border: 5px solid $white;
+                            @extend %transition;
+                            .arrow {
+                                z-index: 1;
+                            }
+                            &:after, .arrow {
+                               opacity: 0;
+                            }
+                        }
+                    }
+                }
+               
+            }
+        }
+        .aboutFancyBox {
+            .parallaxImg-layers {
+                .meta-wrap {
+                    .inner {
+                        padding: 5% 0px !important;
+                    }
+                }
+            }
+        }
+        p {
+            &.orange {
+                color: $orange
+            }
+            span.orange.big {
+                color: $orange;
+                font-weight: bold;
+                font-size: 1.5em;
+            }
+        }
+        .aboutJT {
+            background: $lightGray;
+            padding: 5%;
+            margin-top: 60px;
+            @extend %boxShadow;
+            @extend %transition;
+            &:hover {
+                @extend %scale;
+            }
+        }
+        .centerIconArrow {
+            .nectar_icon_wrap {
+                text-align: center;
+                display: block;
+            }
+        }
+
+        /*****SERVICES****/
+        .alternateRowColor {
+                font-weight: bold;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                @extend %boxShadow, %transition;
+            &:nth-of-type(odd){
+                background: $transparentLightOrange;
+                h3 {
+                    border-color: $orange;
+                }
+                .vc_col-sm-8 {
+                    .wpb_text_column.wpb_content_element {
+                        border-color: $orange;
+                    }
+                }
+            }
+            &:nth-of-type(even){
+                background: $lightGray;
+                h3 {
+                    border-color: $niceGray;
+                    color: $niceGray;
+                }
+                .vc_col-sm-8 {
+                    .wpb_text_column.wpb_content_element {
+                        border-color: $niceGray;
+                    }
+                }
+                .nectar_icon {
+                    &:before {
+                        background-color: $niceGray !important;
+                    }
+                    path {
+                        stroke: $niceGray !important;
+                    }
+                }
+            }
+            &:hover {
+                @extend %scale;
+            }
+            .vc_col-sm-8 {
+                .wpb_text_column.wpb_content_element {
+                    border-left: 5px solid;
+                    padding-left: 20px;
+                }
+            }
+            h3 {
+                border-left: 5px solid;
+                padding-left: 20px;
+            }
+        }
+
+        /***HOLMES APPROVED****/
+        .holmesHeroText {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .contactUs {
+            h4 {
+                color: $niceGray !important;
+            }
+            table {
+                thead {
+                    th {
+                        font-weight: bold;
+                        font-family: Gotham-Bold;
+                        font-size: 1.5em;
+                    }
+                }
+                tbody {
+                    td {
+                        font-weight: bold;
+                        &:last-of-type {
+                            color: $orange;
+                        }
+                    }
+                }
+            }
+        }
+        /***PORTFOLIO PAGE***/
+        .portfolioPage {
+            .work-item {
+                .vert-center {
+                    p {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    /***PORTFOLIO INNER**/
+    &.single-portfolio {
+        .container.main-content {
+            margin-top: 0 !important;
+            margin-bottom: 40px;
+            .page-submenu li {
+                box-sizing: content-box;
+                padding: 0 1%;
+                a {
+                    @extend %transition;
+                    font-family: Gotham-Bold !important;
+                    &:hover {
+                        color: $niceGray !important;
+                    }
+                }
+                &.current-menu-item {
+                    a {
+                        color: $niceGray !important;
+                        font-weight: bold;
+                        font-family: Gotham-Bold !important;
+                        @extend %transition;
+                    }
+                }
+            }
+        }
+        .container-wrap[data-nav-pos*="after"] {
+            .bottom_controls {
+                #portfolio-nav {
+                    li {
+                        &.previous-project, &.next-project{
+                            &:after {
+                                background-color: $niceGray !important;
+                                opacity: .8;
+                            }
+                            &:hover {
+                                &:after {
+                                    background-color: $orange !important;
+                                    opacity: .9;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    /****FOOTER****/
+    #footer-outer {
+        #footer-widgets {
+            text-align: center;
+            .row {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                .col.span_4 {
+                    background: $footerGray;
+                    padding: 1%;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    div {
+                        margin: 0;
+                        table {
+                            margin: auto;
+                            tr {
+                                td {
+                                    strong {
+                                        color: $orange;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.portfolio-template-default.single-portfolio {
+        .container-wrap {
+            .main-content {
+                margin-top: 20px;
+                .post-area {
+                    img.wp-post-image {
+                        margin: 5% auto;
+                        display: block;
+                    }
+                }
+            }
+            .portfolioGallery {
+                margin-bottom: 0;
+            }
+            .portfolioElements {
+                background: $lightGray;
+                transition: all .2s ease-in-out;
+                &:hover {
+                    @extend %scale;
+                }
+            }
+        }
+        #footer-outer {
+            border-top: 5px solid $orange;
+        }
+    }
+    #page-header-bg {
+        h1 {
+            color: $orange;
+        }
+    }
+}
