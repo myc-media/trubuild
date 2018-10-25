@@ -1,15 +1,24 @@
+/*
+Theme Name: TRUbuild
+Theme URI: http://trubuild.com/
+Description: This is a custom child theme for TRUbuild
+Author: MYC Graphics
+Author URI: http://www.mycgraphics.com/
+Template: trubuild
+Version: 0.1
+*/
 /*****COLORS****/
 /*****EXTENDS*****/
 body .container-wrap .aboutJT, body .container-wrap .alternateRowColor {
   box-shadow: 0px 0px 50px -22px black; }
 
-body .container-wrap .aboutJT:hover, body .container-wrap .alternateRowColor:hover, body.portfolio-template-default.single-portfolio .container-wrap .portfolioElements:hover {
+body .container-wrap .aboutJT:hover, body .container-wrap .alternateRowColor:hover, body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .portfolioElements:hover {
   box-shadow: 0px 0px 50px -17px black; }
 
-body .container-wrap .aboutJT:hover, body .container-wrap .alternateRowColor:hover, body.portfolio-template-default.single-portfolio .container-wrap .portfolioElements:hover, body .container-wrap .testimonial_slider .flickity-slider blockquote, body .container-wrap .testimonial_slider .flickity-slider blockquote.is-selected, body .container-wrap .testimonial_slider .flickity-slider blockquote:not(.is-selected) p, body .container-wrap .testimonial_slider .flickity-slider blockquote p, body .container-wrap .aboutCTA, body .container-wrap .aboutCTA .nectar-cta, body .container-wrap .aboutCTA:hover .nectar-cta, body .container-wrap .aboutCTA:hover .nectar-cta a, body .container-wrap .aboutCTA:hover .nectar-cta .link_wrap a.link_text, body .container-wrap .aboutJT, body .container-wrap .alternateRowColor, body.single-portfolio .container.main-content .page-submenu li a, body.single-portfolio .container.main-content .page-submenu li.current-menu-item a {
+body .container-wrap .aboutJT:hover, body .container-wrap .alternateRowColor:hover, body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .portfolioElements:hover, body .container-wrap .testimonial_slider .flickity-slider blockquote, body .container-wrap .testimonial_slider .flickity-slider blockquote.is-selected, body .container-wrap .testimonial_slider .flickity-slider blockquote:not(.is-selected) p, body .container-wrap .testimonial_slider .flickity-slider blockquote p, body .container-wrap .aboutCTA, body .container-wrap .aboutCTA .nectar-cta, body .container-wrap .aboutCTA:hover .nectar-cta, body .container-wrap .aboutCTA:hover .nectar-cta a, body .container-wrap .aboutCTA:hover .nectar-cta .link_wrap a.link_text, body .container-wrap .aboutJT, body .container-wrap .alternateRowColor, body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .page-submenu li a, body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .page-submenu li.current-menu-item a {
   transition: all .2s ease-in-out; }
 
-body .container-wrap .aboutJT:hover, body .container-wrap .alternateRowColor:hover, body.portfolio-template-default.single-portfolio .container-wrap .portfolioElements:hover {
+body .container-wrap .aboutJT:hover, body .container-wrap .alternateRowColor:hover, body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .portfolioElements:hover {
   transform: scale(1.01);
   z-index: 100; }
 
@@ -50,7 +59,7 @@ body {
   font-family: 'Gotham-Light' !important;
   /*****MAIN CONTENT*****/
   /***REMOVE CONTENT PADDING***/
-  /***PORTFOLIO INNER**/
+  /****PORTFOLIO PAGE SINGLE***/
   /****FOOTER****/ }
 
 body * {
@@ -73,8 +82,12 @@ body h2, body h3, body h4, body h5, body h6 {
 body div.wpadminbar {
   font-family: initial !important; }
 
+body #page-header-bg h1 {
+  color: #d35728; }
+
 body .container-wrap {
   padding-bottom: 0 !important;
+  /***NECTAR SLIDER TITLE***/
   /****TESTIMONIALS********/
   /***HOME PORTFOLIO STYLE***/
   /****INSTAGRAM FEED ***/
@@ -83,6 +96,9 @@ body .container-wrap {
   /*****SERVICES****/
   /***HOLMES APPROVED****/
   /***PORTFOLIO PAGE***/ }
+
+body .container-wrap .swiper-wrapper .swiper-slide .slide-bg-wrap ~ .container .content h2 {
+  color: #d35728 !important; }
 
 body .container-wrap .testimonial_slider .flickity-slider {
   display: flex;
@@ -256,32 +272,52 @@ body .container-wrap .contactUs table tbody td:last-of-type {
 body .container-wrap .portfolioPage .work-item .vert-center p {
   display: none; }
 
-body.single-portfolio .container.main-content {
+body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content {
   margin-top: 0 !important;
   margin-bottom: 40px; }
 
-body.single-portfolio .container.main-content .page-submenu li {
+body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .page-submenu li {
   box-sizing: content-box;
   padding: 0 1%; }
 
-body.single-portfolio .container.main-content .page-submenu li a {
+body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .page-submenu li a {
   font-family: Gotham-Bold !important; }
 
-body.single-portfolio .container.main-content .page-submenu li a:hover {
+body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .page-submenu li a:hover {
   color: #333 !important; }
 
-body.single-portfolio .container.main-content .page-submenu li.current-menu-item a {
+body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .page-submenu li.current-menu-item a {
   color: #333 !important;
   font-weight: bold;
   font-family: Gotham-Bold !important; }
 
-body.single-portfolio .container-wrap[data-nav-pos*="after"] .bottom_controls #portfolio-nav li.previous-project:after, body.single-portfolio .container-wrap[data-nav-pos*="after"] .bottom_controls #portfolio-nav li.next-project:after {
+body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .post-area img.wp-post-image {
+  margin: 5% auto;
+  display: block; }
+
+body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .portfolioGallery {
+  margin-bottom: 0; }
+
+body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .portfolioElements {
+  background: #ededed;
+  transition: all .2s ease-in-out; }
+
+body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .main-content .portfolioElements .wpb_text_column p {
+  width: 90%; }
+
+body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .bottom_controls #portfolio-nav li.previous-project:after, body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .bottom_controls #portfolio-nav li.next-project:after {
   background-color: #333 !important;
   opacity: .8; }
 
-body.single-portfolio .container-wrap[data-nav-pos*="after"] .bottom_controls #portfolio-nav li.previous-project:hover:after, body.single-portfolio .container-wrap[data-nav-pos*="after"] .bottom_controls #portfolio-nav li.next-project:hover:after {
+body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .bottom_controls #portfolio-nav li.previous-project:hover:after, body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="after"] .bottom_controls #portfolio-nav li.next-project:hover:after {
   background-color: #d35728 !important;
   opacity: .9; }
+
+body.portfolio-template-default.single-portfolio #footer-outer {
+  border-top: 5px solid #d35728; }
+
+body .hahHero .nectar_icon_wrap {
+  margin-bottom: 0 !important; }
 
 body #footer-outer #footer-widgets {
   text-align: center; }
@@ -306,24 +342,4 @@ body #footer-outer #footer-widgets .row .col.span_4 div table {
   margin: auto; }
 
 body #footer-outer #footer-widgets .row .col.span_4 div table tr td strong {
-  color: #d35728; }
-
-body.portfolio-template-default.single-portfolio .container-wrap .main-content {
-  margin-top: 20px; }
-
-body.portfolio-template-default.single-portfolio .container-wrap .main-content .post-area img.wp-post-image {
-  margin: 5% auto;
-  display: block; }
-
-body.portfolio-template-default.single-portfolio .container-wrap .portfolioGallery {
-  margin-bottom: 0; }
-
-body.portfolio-template-default.single-portfolio .container-wrap .portfolioElements {
-  background: #ededed;
-  transition: all .2s ease-in-out; }
-
-body.portfolio-template-default.single-portfolio #footer-outer {
-  border-top: 5px solid #d35728; }
-
-body #page-header-bg h1 {
   color: #d35728; }

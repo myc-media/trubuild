@@ -1,3 +1,13 @@
+/*
+Theme Name: TRUbuild
+Theme URI: http://trubuild.com/
+Description: This is a custom child theme for TRUbuild
+Author: MYC Graphics
+Author URI: http://www.mycgraphics.com/
+Template: trubuild
+Version: 0.1
+*/
+
 /*****COLORS****/
 $orange : #d35728;
 $lightGray: #ededed;
@@ -87,12 +97,30 @@ body {
     div.wpadminbar {
       font-family: initial !important;
     }
-
+    #page-header-bg {
+        h1 {
+            color: $orange;
+        }
+    }
     /*****MAIN CONTENT*****/
     /***REMOVE CONTENT PADDING***/
     .container-wrap {
         padding-bottom: 0 !important;
 
+        /***NECTAR SLIDER TITLE***/
+        .swiper-wrapper {
+            .swiper-slide {
+                .slide-bg-wrap{
+                    & ~ .container {
+                        .content {
+                            h2 {
+                                color: $orange !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         /****TESTIMONIALS********/
         .testimonial_slider {
             .flickity-slider {
@@ -363,32 +391,51 @@ body {
             }
         }
     }
-    /***PORTFOLIO INNER**/
-    &.single-portfolio {
-        .container.main-content {
-            margin-top: 0 !important;
-            margin-bottom: 40px;
-            .page-submenu li {
-                box-sizing: content-box;
-                padding: 0 1%;
-                a {
-                    @extend %transition;
-                    font-family: Gotham-Bold !important;
-                    &:hover {
-                        color: $niceGray !important;
+    /****PORTFOLIO PAGE SINGLE***/
+    &.portfolio-template-default.single-portfolio {
+        .container-wrap[data-nav-pos*="after"] {
+            .main-content {
+                margin-top: 0 !important;
+                margin-bottom: 40px;
+                .page-submenu li {
+                    box-sizing: content-box;
+                    padding: 0 1%;
+                    a {
+                        @extend %transition;
+                        font-family: Gotham-Bold !important;
+                        &:hover {
+                            color: $niceGray !important;
+                        }
+                    }
+                    &.current-menu-item {
+                        a {
+                            color: $niceGray !important;
+                            font-weight: bold;
+                            font-family: Gotham-Bold !important;
+                            @extend %transition;
+                        }
                     }
                 }
-                &.current-menu-item {
-                    a {
-                        color: $niceGray !important;
-                        font-weight: bold;
-                        font-family: Gotham-Bold !important;
-                        @extend %transition;
+                .post-area {
+                    img.wp-post-image {
+                        margin: 5% auto;
+                        display: block;
+                    }
+                }
+                .portfolioGallery {
+                    margin-bottom: 0;
+                }
+                .portfolioElements {
+                    background: $lightGray;
+                    transition: all .2s ease-in-out;
+                    &:hover {
+                        @extend %scale;
+                    }
+                    .wpb_text_column p {
+                        width: 90%;
                     }
                 }
             }
-        }
-        .container-wrap[data-nav-pos*="after"] {
             .bottom_controls {
                 #portfolio-nav {
                     li {
@@ -408,9 +455,15 @@ body {
                 }
             }
         }
+        #footer-outer {
+            border-top: 5px solid $orange;
+        }
     }
-
-
+    .hahHero {
+        .nectar_icon_wrap {
+            margin-bottom: 0 !important;
+        }
+    }
     /****FOOTER****/
     #footer-outer {
         #footer-widgets {
@@ -441,37 +494,6 @@ body {
                     }
                 }
             }
-        }
-    }
-    &.portfolio-template-default.single-portfolio {
-        .container-wrap {
-            .main-content {
-                margin-top: 20px;
-                .post-area {
-                    img.wp-post-image {
-                        margin: 5% auto;
-                        display: block;
-                    }
-                }
-            }
-            .portfolioGallery {
-                margin-bottom: 0;
-            }
-            .portfolioElements {
-                background: $lightGray;
-                transition: all .2s ease-in-out;
-                &:hover {
-                    @extend %scale;
-                }
-            }
-        }
-        #footer-outer {
-            border-top: 5px solid $orange;
-        }
-    }
-    #page-header-bg {
-        h1 {
-            color: $orange;
         }
     }
 }
