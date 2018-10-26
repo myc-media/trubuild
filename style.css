@@ -95,6 +95,7 @@ body .container-wrap {
   /*****ABOUT****/
   /*****SERVICES****/
   /***HOLMES APPROVED****/
+  /****CONTACT US *****/
   /***PORTFOLIO PAGE***/ }
 
 body .container-wrap .swiper-wrapper .swiper-slide .slide-bg-wrap ~ .container .content h2 {
@@ -255,6 +256,40 @@ body .container-wrap .holmesHeroText {
   flex-wrap: wrap;
   justify-content: center; }
 
+body .container-wrap .hahHero .nectar_icon_wrap {
+  margin-bottom: 0 !important; }
+
+body .container-wrap .hahHero .holmesImage {
+  opacity: 1;
+  transform: translate(0px, 0px);
+  filter: drop-shadow(0px 5px 8px black); }
+
+body .container-wrap .hahHero .heroHolmesName {
+  position: absolute;
+  left: -20%;
+  top: 20%;
+  -moz-transform: translateY(-50%) rotate(-90deg);
+  -ms-transform: translateY(-50%) rotate(-90deg);
+  -o-transform: translateY(-50%) rotate(-90deg);
+  -webkit-transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(-50%) rotate(-90deg); }
+
+body .container-wrap .hahHero .nectar-video-box {
+  box-shadow: 0px -20px 50px -22px black; }
+
+body .container-wrap .holmesName {
+  margin-bottom: 0; }
+
+body .container-wrap .holmesTitle {
+  font-size: 12px;
+  font-weight: bold;
+  color: black; }
+
+body .container-wrap .holmesTestimonial {
+  color: black;
+  font-weight: bold;
+  font-family: Gotham-Bold !important; }
+
 body .container-wrap .contactUs h4 {
   color: #333 !important; }
 
@@ -315,9 +350,6 @@ body.portfolio-template-default.single-portfolio .container-wrap[data-nav-pos*="
 
 body.portfolio-template-default.single-portfolio #footer-outer {
   border-top: 5px solid #d35728; }
-
-body .hahHero .nectar_icon_wrap {
-  margin-bottom: 0 !important; }
 
 body #footer-outer #footer-widgets {
   text-align: center; }
